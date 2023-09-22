@@ -3,7 +3,7 @@ import styles from "./Navbar.module.scss";
 import Logo from "../../../assets/icons/logo.png";
 import { Link } from "react-scroll";
 import menu from "../../../assets/icons/list.svg";
-import { ReactComponent as CloseIcon } from "../../../assets/icons/close.svg";
+import closeIcon from "../../../assets/icons/close.svg";
 
 const Navbar = () => {
   const navRef = useRef(null);
@@ -37,7 +37,7 @@ const Navbar = () => {
           offset={0}
           duration={500}
         >
-          <img className={styles.imgNavbar} src={Logo} />
+          <img className={styles.imgNavbar} src={Logo} alt="logo" />
         </Link>
       </div>
 
@@ -86,14 +86,11 @@ const Navbar = () => {
         </li>
       </ul>
       <img
-        src={menuVisible ? CloseIcon : menu}
+        src={menuVisible ? closeIcon : menu}
         alt="menu"
         className={styles.hamburgerMenu}
         onClick={switchResponsiveMenu}
       />
-      {/* <button className={styles.navbarBtn} onClick={switchResponsiveMenu}>
-        Menu
-      </button> */}
     </nav>
   );
 };
